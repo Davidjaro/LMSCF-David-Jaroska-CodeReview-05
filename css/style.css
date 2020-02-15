@@ -1,0 +1,57 @@
+img{
+	max-width: 100%;
+}
+header{
+	text-align: center;
+}
+footer{
+	text-align: center;
+}
+.row{
+	word-wrap: break-word;
+	background-color: #1D2329;
+}
+li a{
+	display: flex;
+	flex-direction: row;
+}
+.background{
+	background-color: #1D2329;
+
+}
+.movieframe{
+	max-width: 800px;
+	display: flex;
+	background-color: gray;
+	border: 1px solid red;
+	word-wrap: break-word;
+	overflow: hidden;
+}
+.movieframe h2{
+	padding-top: 2rem;
+}
+.sort{
+	padding-right: 2rem;
+}
+.movietext{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+.photo{
+	display: flex;
+	flex-direction: row;
+}
+.text{
+	text-align: center;
+	font-size: 1.2rem;
+	word-wrap: break-word;
+}
+@media screen and (max-width: 992px){
+	.text{
+		font-size: 1.0rem;
+	}
+	.like{
+		padding-bottom: 2rem;
+	}
+}
