@@ -21,10 +21,7 @@ li a{
 
 }
 .movieframe{
-	max-width: 800px;
 	display: flex;
-	background-color: gray;
-	border: 1px solid red;
 	word-wrap: break-word;
 	overflow: hidden;
 }

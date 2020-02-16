@@ -2,39 +2,39 @@ movies = `[
         {
 		 "img": "./img/us.jpg",
          "name": "Us",
-         "director": "Jordan Peele",
+         "likes": "20",
          "desc": "A family's serene beach vacation turns to chaos when their doppelgängers appear and begin to terrorize them."
         },
 		
 		{
          "img": "./img/joker.jpg",
          "name": "Joker",
-         "director": "Todd Phillips",
+         "likes": "10",
          "desc": "In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: the Joker."
        },
 
        {
          "img": "./img/avengers.jpg",
          "name": "Avengers Endgame",
-         "director": "Anthony Russo, Joe Russo",
+         "likes": "15",
          "desc": "After the devastating events of Avengers 3: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe."
        },
        {
          "img": "./img/star.jpg",
          "name": "A Star is Born",
-         "director": "Bradley Cooper",
+         "likes": "24",
          "desc": "A musician helps a young singer find fame as age and alcoholism send his own career into a downward spiral."
        },
        {
          "img": "./img/1917.jpg",
          "name": "1917",
-         "director": "Sam Mendes",
+         "likes": "8",
          "desc": "April 6th, 1917. As a regiment assembles to wage war deep in enemy territory, two soldiers are assigned to race against time and deliver a message that will stop 1,600 men from walking straight into a deadly trap."
        },
        {
          "img": "./img/countdown.jpg",
          "name": "Countdown",
-         "director": "Justin Dec",
+         "likes": "1",
          "desc": "When a nurse downloads an app that claims to predict the moment a person will die, it tells her she only has three days to live. With the clock ticking and a figure haunting her, she must find a way to save her life before time runs out."
        }
         ]`;

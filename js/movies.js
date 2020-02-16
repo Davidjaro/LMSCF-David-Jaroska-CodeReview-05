@@ -1,26 +1,43 @@
+const updateLike = function() {
+    $(movies).each(function(i){
+        movies[i].likes = likesPerMovie[i];
+    });
+}
 
+var newLikeCounter = function() {
+    var indexOfThis = $(".thumbbtn").index(this);
+    likesPerMovie[indexOfThis] += 1;
+    $(this).children(".likes").text(likesPerMovie[indexOfThis]);
+}
 var movies = JSON.parse(movies);
+var likesPerMovie = [];
 
 
 for (let i=0; i < movies.length; i++){
-	var likes =Math.floor(Math.random() * 26);
+	likesPerMovie[i] = Number(movies[i].likes);
 
-	var img = ` <div id="div${i}" class="col-lg-5 col-md-6 m-5  movieframe">
-						<img class="poster img-responsive" id="image${i}" src="${movies[i].img}">
-					<div class="text mh-100">	
-						<h2 class"title text-center"> ${movies[i].name}</h2>		
-						<p class="text-white text-left pl-2 w-100 h-20"  id="p${i}">Directed by: ${movies[i].director}</p>
-						<p class="text-white text-left pl-2 w-100 h-50"  id="p${i}">${movies[i].desc}</p>
-						<button type="button" id="add${i}" class="btn btn-primary like" data-toggle="button" aria-pressed="false">Like
-						</button>
-						<p class="d-inline" id="show${i}">${likes}</p>
-					</div>
-				</div>
-				`;
-	$(".movies").append(img);
-	$("#add"+ i).on("click", function() {
-	var y = (likes +=1)
-	$("#show"+i).replaceWith(y);
+	$(".movies").append(` <div class="col-12 col-sm-6 col-lg-4 mb-4 mt-2 ">
+            <div class="movieframe text-white">
+                <div class="container-fluid">
+                    <div class="row bg-secondary">
+                        <div class="col-5 p-2">
+                            <img class="img-fluid rounded border" src="${movies[i].img}" alt="">
+                        </div>
+                        <div class="col-7 d-flex flex-column">
+                            <h3 class="mt-2 ">${movies[i].name}</h3>
+                            <p class="mt-1 ">${movies[i].desc}</p>
+                            <button class="bg-transparent thumbbtn border-0 ml-auto mt-auto p-0 mb-3 d-flex pr-4">
+                                <span class="pr-4">Like</span>
+                                <img class="pr-4 d-inline" src="img/likebtn.svg" alt="">
+                                <span class="likes rounded-circle text-white pr-4">${movies[i].likes}</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-	});
+				`);
 };
+
+$(".thumbbtn").on("click", newLikeCounter).on("click", updateLike);
