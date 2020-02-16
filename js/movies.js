@@ -13,17 +13,22 @@ var newLikeCounter = function() {
     $(this).children(".likes").text(likes[i]);
 }
 function mostArray(){ 
-	var numericallyOrderedDivs = likes.sort(function(a,b){
+	var numMost = likes.sort(function(a,b){
         return b - a;
         
     });
-    console.log(numericallyOrderedDivs);
+    console.log(numMost);
     
 };
-// $(".sortbtn").on("click", mostArray);
 
-
-
+function leastArray(){ 
+	var numLeast = likes.sort(function(a,b){
+        return a - b;
+        
+    });
+    console.log(numLeast);
+    
+};
 
 
 for (let i=0; i < movies.length; i++){
@@ -34,7 +39,7 @@ for (let i=0; i < movies.length; i++){
                 <div class="container-fluid">
                     <div class="row bg-secondary">
                         <div class="col-5 p-2">
-                            <img class="img-fluid rounded border" src="${movies[i].img}" alt="">
+                            <img class="rounded border" src="${movies[i].img}" alt="">
                         </div>
                         <div class="col-7 d-flex flex-column">
                             <h3 class="mt-2 ">${movies[i].name}</h3>
@@ -55,12 +60,5 @@ for (let i=0; i < movies.length; i++){
 
 $(".thumbbtn").on("click", newLikeCounter).on("click", updateLike);
 $(".sortbtn").on("click", mostArray);
+$(".sortbtn1").on("click", leastArray);
 
-// var divs = $("div.movies")
-// $('.sortbtn').on('click', function(){
-//     var numericallyOrderedDivs = divs.sort(function(a,b){
-//         return $(a).find(".likes") > $(b).find(".likes");
-//     });
-//     console.log(numericallyOrderedDivs)
-//     $(".movies").replaceWith(numericallyOrderedDivs);
-// });
