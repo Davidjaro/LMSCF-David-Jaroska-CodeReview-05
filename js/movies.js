@@ -1,20 +1,33 @@
-const updateLike = function() {
+var movies = JSON.parse(movies);
+var likes = [];
+
+var updateLike = function() {
     $(movies).each(function(i){
-        movies[i].likes = likesPerMovie[i];
+        movies[i].likes = likes[i];
     });
 }
 
 var newLikeCounter = function() {
-    var indexOfThis = $(".thumbbtn").index(this);
-    likesPerMovie[indexOfThis] += 1;
-    $(this).children(".likes").text(likesPerMovie[indexOfThis]);
+    var i = $(".thumbbtn").index(this);
+    likes[i] += 1;
+    $(this).children(".likes").text(likes[i]);
 }
-var movies = JSON.parse(movies);
-var likesPerMovie = [];
+function mostArray(){ 
+	var numericallyOrderedDivs = likes.sort(function(a,b){
+        return b - a;
+        
+    });
+    console.log(numericallyOrderedDivs);
+    
+};
+// $(".sortbtn").on("click", mostArray);
+
+
+
 
 
 for (let i=0; i < movies.length; i++){
-	likesPerMovie[i] = Number(movies[i].likes);
+	likes[i] = Number(movies[i].likes);
 
 	$(".movies").append(` <div class="col-12 col-sm-6 col-lg-4 mb-4 mt-2 ">
             <div class="movieframe text-white">
@@ -41,3 +54,13 @@ for (let i=0; i < movies.length; i++){
 };
 
 $(".thumbbtn").on("click", newLikeCounter).on("click", updateLike);
+$(".sortbtn").on("click", mostArray);
+
+// var divs = $("div.movies")
+// $('.sortbtn').on('click', function(){
+//     var numericallyOrderedDivs = divs.sort(function(a,b){
+//         return $(a).find(".likes") > $(b).find(".likes");
+//     });
+//     console.log(numericallyOrderedDivs)
+//     $(".movies").replaceWith(numericallyOrderedDivs);
+// });
