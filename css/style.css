@@ -1,4 +1,4 @@
-img{
+.movieposter{
 	width: 100%;
 	height: 100%;
 }
@@ -44,6 +44,9 @@ li a{
 	text-align: center;
 	font-size: 1.2rem;
 	word-wrap: break-word;
+}
+.likepic{
+	width: 3em;
 }
 @media screen and (max-width: 992px){
 	.text{
